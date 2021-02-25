@@ -27,6 +27,9 @@
         <testsuite name="Functional Test Suite">
             <directory>tests/Functional</directory>
         </testsuite>
+        <testsuite name="Integration Test Suite">
+            <directory>tests/Integration</directory>
+        </testsuite>
         <testsuite name="Unit Test Suite">
             <directory>tests/Unit</directory>
         </testsuite>

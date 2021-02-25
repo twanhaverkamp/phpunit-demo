@@ -1,6 +1,6 @@
 {
-    "name": "twanhaverkamp/landing-page-skeleton",
-    "description": "This project contains a lightweight Symfony 5 installation with only the bear minimum amount of components to function as a skeleton for new landing pages.",
+    "name": "twanhaverkamp/phpunit-demo",
+    "description": "A simple demo project for explaining the basics of software testing and how to use PHPUnit.",
     "type": "project",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -58,6 +58,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\Functional\\": "tests/Functional/",
+            "Tests\\Integration\\": "tests/Integration/",
             "Tests\\Unit\\": "tests/Unit/"
         }
     },
