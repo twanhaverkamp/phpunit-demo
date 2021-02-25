@@ -1,0 +1,6 @@
+error:
+  invalid: '{{ label }} is invalid'
+  invalid_choice: '{{ label }} contains an invalid choice'
+  invalid_max_length: '{{ label }} can contain up to {{ limit }} characters'
+  invalid_min_length: '{{ label }} must contain at least {{ limit }} character'
+  invalid_pattern: '{{ label }} contains invalid characters'
