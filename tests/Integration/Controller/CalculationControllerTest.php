@@ -59,6 +59,11 @@ class CalculationControllerTest extends TestCase
 
     /**
      * {@inheritdoc}
+     *
+     * This method allows you to prepare for your tests. Consider, for example, setting up a test database
+     * and running migrations and fixtures. Afterwards you can clean up again with the {@see tearDown} method.
+     *
+     * Note: This method is called for every single test in this class.
      */
     protected function setUp(): void
     {
@@ -98,6 +103,10 @@ class CalculationControllerTest extends TestCase
     }
 
     /**
+     * As you may have noticed, this test requires a lot of effort, where most of the code consists of mocking various dependencies.
+     * Note: Mocking an object manipulates the way that object behaves. It is useful if your class has many dependencies,
+     * but this also increases the risk of actually testing "$this->assertTrue(true)".
+     *
      * @covers       CalculationController::__invoke
      * @dataProvider getValidCalculationData
      */
@@ -156,6 +165,9 @@ class CalculationControllerTest extends TestCase
     }
 
     /**
+     * Testing your "best case" scenario makes sense and is usually the first thing you do.
+     * But don't forget to test the other scenarios, because they will occur!
+     *
      * @covers CalculationController::__invoke
      */
     public function testInvokeWithNonSubmittedFormWontCallCalculator(): void
@@ -243,12 +255,17 @@ class CalculationControllerTest extends TestCase
     }
 
     /**
+     * Note: DataProviders are called before the class is initiated to calculate the number of tests present.
+     * Because of this you do not have access to properties that are filled in the {@see setUp} method.
+     *
      * @return array<string, array<string, mixed>>
      */
     public function getValidCalculationData(): iterable
     {
         return [
-            'Multiply 1 by 1' => [
+            [Calculation::TYPE_MULTIPLY, 1, 1, 'multiply', 1, 1, 1],
+            // This will perform the exact same test as above, but the output will be more comprehensible.
+            '1 * 1 = 1' => [
                 'calculationType' => Calculation::TYPE_MULTIPLY,
                 'calculationVar1' => 1,
                 'calculationVar2' => 1,
@@ -257,7 +274,7 @@ class CalculationControllerTest extends TestCase
                 'expectedCalculatorVar2' => 1,
                 'expectedCalculatorResult' => 1,
             ],
-            'Divide 2 by 2' => [
+            '2 / 2 = 1' => [
                 'calculationType' => Calculation::TYPE_DIVIDE,
                 'calculationVar1' => 2,
                 'calculationVar2' => 2,
