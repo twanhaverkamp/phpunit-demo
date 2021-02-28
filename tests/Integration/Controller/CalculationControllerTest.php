@@ -258,7 +258,7 @@ class CalculationControllerTest extends TestCase
      * Note: DataProviders are called before the class is initiated to calculate the number of tests present.
      * Because of this you do not have access to properties that are filled in the {@see setUp} method.
      *
-     * @return array<string, array<string, mixed>>
+     * @return array<int|string, array<int|string, mixed>>
      */
     public function getValidCalculationData(): iterable
     {
