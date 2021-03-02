@@ -18,7 +18,6 @@ use Twig\Environment;
 
 /**
  * @author Twan Haverkamp <twan@mailcampaigns.nl>
- * @covers CalculationController
  */
 class CalculationControllerTest extends TestCase
 {
@@ -61,7 +60,7 @@ class CalculationControllerTest extends TestCase
      * {@inheritdoc}
      *
      * This method allows you to prepare for your tests. Consider, for example, setting up a test database
-     * and running migrations and fixtures. Afterwards you can clean up again with the {@see tearDown} method.
+     * and running your fixtures. Afterwards you can clean up again with the {@see tearDown} method.
      *
      * Note: This method is called for every single test in this class.
      */
@@ -107,7 +106,7 @@ class CalculationControllerTest extends TestCase
      * Note: Mocking an object manipulates the way that object behaves. It is useful if your class has many dependencies,
      * but this also increases the risk of actually testing "$this->assertTrue(true)".
      *
-     * @covers       CalculationController::__invoke
+     * @covers       \App\Controller\CalculationController::__invoke
      * @dataProvider getValidCalculationData
      */
     public function testInvokeWithValidSubmittedFormWillCallExpectedCalculatorMethod(
@@ -168,7 +167,7 @@ class CalculationControllerTest extends TestCase
      * Testing your "best case" scenario makes sense and is usually the first thing you do.
      * But don't forget to test the other scenarios, because they will occur!
      *
-     * @covers CalculationController::__invoke
+     * @covers \App\Controller\CalculationController::__invoke
      */
     public function testInvokeWithNonSubmittedFormWontCallCalculator(): void
     {
@@ -211,7 +210,7 @@ class CalculationControllerTest extends TestCase
     }
 
     /**
-     * @covers CalculationController::__invoke
+     * @covers \App\Controller\CalculationController::__invoke
      */
     public function testInvokeWithInvalidSubmittedFormWontCallCalculator(): void
     {
@@ -264,7 +263,8 @@ class CalculationControllerTest extends TestCase
     {
         return [
             [Calculation::TYPE_MULTIPLY, 1, 1, 'multiply', 1, 1, 1],
-            // This will perform the exact same test as above, but the output will be more comprehensible.
+
+            // Note: This will perform the exact same test as above, but the output will be more comprehensible.
             '1 * 1 = 1' => [
                 'calculationType' => Calculation::TYPE_MULTIPLY,
                 'calculationVar1' => 1,

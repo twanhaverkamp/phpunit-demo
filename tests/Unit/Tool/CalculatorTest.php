@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Twan Haverkamp <twan@mailcampaigns.nl>
- * @covers Calculator
  */
 class CalculatorTest extends TestCase
 {
@@ -25,7 +24,7 @@ class CalculatorTest extends TestCase
      * This is a bad example, because you are only testing one "best case" scenario
      * and it is not clear which scenario you are testing.
      *
-     * @covers Calculator::multiply
+     * @covers \App\Tool\Calculator::multiply
      */
     public function testMultiply(): void
     {
@@ -39,7 +38,7 @@ class CalculatorTest extends TestCase
      * Note: If you give your test methods valuable names like this and you pass the '--testdox' option on your command line
      * when running your tests, the output will look like this: "Multiply with integer arguments will return expected calculation".
      *
-     * @covers       Calculator::multiply
+     * @covers       \App\Tool\Calculator::multiply
      * @dataProvider getIntegerDataForMultiplier
      */
     public function testMultiplyWithIntegerArgumentsWillReturnExpectedCalculation(
@@ -51,7 +50,7 @@ class CalculatorTest extends TestCase
     }
 
     /**
-     * @covers       Calculator::multiply
+     * @covers       \App\Tool\Calculator::multiply
      * @dataProvider getFloatDataForMultiplier
      */
     public function testMultiplyWithFloatArgumentsWillReturnExpectedCalculation(
@@ -64,6 +63,7 @@ class CalculatorTest extends TestCase
 
     /**
      * Each sub-array contains a specific test scenario, where the values are passed as method arguments.
+     *
      * @return array<string, array<string, int>>
      */
     public function getIntegerDataForMultiplier(): iterable

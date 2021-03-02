@@ -10,12 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @author Twan Haverkamp <twan@mailcampaigns.nl>
- * @covers CalculationController
  */
 class CalculationControllerTest extends WebTestCase
 {
     /**
-     * @covers CalculationController::__invoke
+     * @covers \App\Controller\CalculationController::__invoke
      */
     public function testInvokeReturnsFormWithoutResult(): void {
         $client = static::createClient();
@@ -34,7 +33,7 @@ class CalculationControllerTest extends WebTestCase
      * fill in the form and then click the submit button. Because you act like a real user and because you're not
      * manipulate any part of the integration makes tests like these considerably more valuable.
      *
-     * @covers       CalculationController::__invoke
+     * @covers       \App\Controller\CalculationController::__invoke
      * @dataProvider getValidFormData
      *
      * @param array<string, mixed> $formData
