@@ -147,7 +147,7 @@ class CalculationControllerTest extends TestCase
         $this->twigEnvironmentMock
             ->expects($this->once())
             ->method('render')
-            ->with('calculation/multiply.html.twig', [
+            ->with('calculation.html.twig', [
                 'form' => $this->formViewStub,
                 'result' => $expectedCalculatorResult,
             ]);
@@ -193,9 +193,9 @@ class CalculationControllerTest extends TestCase
         $this->twigEnvironmentMock
             ->expects($this->once())
             ->method('render')
-            ->with('calculation/multiply.html.twig', [
+            ->with('calculation.html.twig', [
                 'form' => $this->formViewStub,
-                'result' => '-',
+                'result' => null,
             ]);
 
         $this->containerMock
@@ -237,9 +237,9 @@ class CalculationControllerTest extends TestCase
         $this->twigEnvironmentMock
             ->expects($this->once())
             ->method('render')
-            ->with('calculation/multiply.html.twig', [
+            ->with('calculation.html.twig', [
                 'form' => $this->formViewStub,
-                'result' => '-',
+                'result' => null,
             ]);
 
         $this->containerMock

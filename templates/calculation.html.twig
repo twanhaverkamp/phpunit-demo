@@ -6,6 +6,6 @@
     {{ form_end(form) }}
 
     <div>
-        <strong>Result:</strong> <span id="calculation_result">{{ result }}</span>
+        <strong>Result:</strong> <span id="calculation_result">{{ result|default('-') }}</span>
     </div>
 {% endblock %}

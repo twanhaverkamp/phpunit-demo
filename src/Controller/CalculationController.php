@@ -37,9 +37,9 @@ class CalculationController extends AbstractController
             $result = $calculator->{$calculation->type}($calculation->var1, $calculation->var2);
         }
 
-        return $this->render('calculation/multiply.html.twig', [
+        return $this->render('calculation.html.twig', [
             'form' => $form->createView(),
-            'result' => $result ?? '-',
+            'result' => $result ?? null,
         ]);
     }
 }
